@@ -3,9 +3,23 @@
 Подключитесь к ВМ по ssh и установите стек docker.
 Найдите в документации docker provider способ настроить подключение terraform на вашей рабочей станции к remote docker context вашей ВМ через ssh.
 
-Настройка remote context в docker:
+### Настройка remote context в docker:
 
 Для удобства создадим ssh config:
+
+![ssh](https://github.com/stkv1/ter-homework-01/blob/main/pic/129.PNG)
+
+Убедимся, что с помощью конфига можно успешно подключиться к ВМ в облаке:
+
+![ssh](https://github.com/stkv1/ter-homework-01/blob/main/pic/130.PNG)
+
+Создадим docker context
+
+`docker context create yandex --docker "host=ssh://vm-yandex"`
+
+`docker context use yandex`
+
+![context](https://github.com/stkv1/ter-homework-01/blob/main/pic/140.PNG)
 
 Используя terraform и remote docker context, скачайте и запустите на вашей ВМ контейнер mysql:8 на порту 127.0.0.1:3306, передайте ENV-переменные. Сгенерируйте разные пароли через random_password и передайте их в контейнер, используя интерполяцию из примера с nginx.(name  = "example_${random_password.random_string.result}" , двойные кавычки и фигурные скобки обязательны!)
     environment:
