@@ -1,5 +1,5 @@
 variable "docker_host" {
   type        = string
-  description = "URL Docker-хоста (например, ssh://user@host или unix:///var/run/docker.sock)"
+  description = "Ссылка на ssh config или URL хоста"
   default     = "ssh://vm-yandex"
 }
