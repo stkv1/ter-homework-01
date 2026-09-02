@@ -29,3 +29,11 @@
       - "MYSQL_PASSWORD=${...}"
       - MYSQL_ROOT_HOST="%"
 Зайдите на вашу ВМ , подключитесь к контейнеру и проверьте наличие секретных env-переменных с помощью команды env. Запишите ваш финальный код в репозиторий.
+
+Запущенный контейнер с mysql:
+
+![mysql](https://github.com/stkv1/ter-homework-01/blob/main/pic/139.PNG)
+
+Переменные внутри контейнера:
+
+![env](https://github.com/stkv1/ter-homework-01/blob/main/pic/140.PNG)
